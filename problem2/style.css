@@ -1,0 +1,124 @@
+:root {
+  --white-color: #ffffff;
+  --background-dark-green: #29500a;
+  --background-light-green: #9fe870;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 360px;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  background-color: var(--background-dark-green);
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.wrap-form-swap {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  border-radius: 32px;
+  background: var(--white-color);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.swap-content {
+  width: 100%;
+  margin: 0 22px;
+}
+.title-swap {
+  width: 100%;
+  padding-top: 50px;
+  text-align: center;
+  color: var(--background-light-green);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.swap-input {
+  display: flex;
+  gap: 5%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.swap-input-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+.swap-input-item > label {
+  color: #454745;
+  font-size: 0.875rem;
+  padding: 5px 3px;
+  margin-top: 30px;
+  width: 100%;
+}
+.swap-input-item > input {
+  width: 280px;
+  height: 76px;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 24px;
+  border: solid 0.5px;
+  width: 100%;
+}
+.swap-input-item > input:hover {
+  box-shadow: inset 0 0 0 1px;
+  cursor: pointer;
+}
+.select-money {
+  width: 100%;
+  justify-items: center;
+}
+.select-money > select {
+  color: #686968;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.form-select {
+  width: 40%;
+  text-align: center;
+}
+
+.swap-button {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+.swap-button > button {
+  color: var(--background-dark-green);
+  border: none;
+  background-color: var(--background-light-green);
+  padding: 16px 16px;
+  font-size: 18px;
+  border-radius: 50px;
+  transition: opacity 0.1s ease-in-out;
+}
+.swap-button > button:hover {
+  background-color: #80e142;
+  cursor: pointer;
+}
+.change-icon {
+  margin-top: 95px;
+}
+.change-icon > img {
+  width: 40px;
+  height: 40px;
+}

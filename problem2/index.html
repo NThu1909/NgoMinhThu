@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fancy Form</title>
+  </head>
+  <body>
+    <form class="form" id="myform">
+      <h2 class="title-swap">Currency Exchange</h2>
+      <div class="wrap-form-swap">
+        <div class="swap-content">
+          <div class="swap-input">
+            <div class="swap-input-item">
+              <div class="select-money">
+                <select
+                  id="select-currency-from"
+                  class="form-select"
+                  name="select-swap"
+                  aria-label="Default select example"
+                ></select>
+              </div>
+              <label for="input-amount-send">Amount to send</label>
+              <input id="input-amount-send" min="0" />
+            </div>
+            <div class="change-icon">
+              <img src="src/icon.jpg" alt="change-icon" />
+            </div>
+            <div class="swap-input-item">
+              <div class="select-money">
+                <select
+                  id="select-currency-to"
+                  class="form-select"
+                  name="select-swap"
+                  aria-label="Default select example"
+                ></select>
+              </div>
+              <label for="input-amount-receive">Amount to receive</label>
+              <input id="input-amount-receive" disabled min="0" />
+            </div>
+          </div>
+          <div class="swap-button">
+            <button type="submit">Submit Swap</button>
+          </div>
+        </div>
+      </div>
+      <ul id="data-list"></ul>
+    </form>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

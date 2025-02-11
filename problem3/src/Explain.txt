@@ -1,0 +1,61 @@
+The folder structure includes:
+- Assets folder: stores resources such as images, icons,
+- Components folder: contains components WalletPage and WalletRow
+- Hooks folder: contains two hooks usePrices and useWalletBalances
+- Interfaces folder: contains interfaces such as BoxProps, FormattedWalletBalance, Props, and WalletBalance.
+1. The two variables balances and prices are declared with two hooks useWalletBalances() and usePrices() but are not defined.
+=> Improvement
+- Create a folder named hooks containing two files defining two hooks useWalletBalances() and usePrices() and mock data for testing.
+2. The WalletBalance and FormattedWalletBalance interfaces have two identical fields "currency" and "amount".
+=> Improvement:
+Create a folder to contain the interfaces:
+- WalletBalance: contains the properties as the sample and adds the property "blockchain: string" to use the function "getPriority(balance.blockchain)" assigned to the const variable "balancePriority"
+- FormattedWalletBalance: inherits the properties of the "WalletBalance" interface and adds a new field "formatted: string"
+3. The BoxProps interface inherited by the Props interface is not defined.
+=> Improvement
+- Create a BoxProps interface in the interfaces folder named "BoxProps.tsx" with two fields className and style.
+- Props interface inherits from BoxProps and adds field "children?: React.ReactNode;".
+4. In the constant variable prices declare the key of prices with data type string and value number to ensure that the variable prices will always be an object with keys being character strings and values ​​being numbers.
+=> const prices: { [key: string]: number } = usePrices();
+5. In the function getPriority = (blockchain: any), using data type any will be unclear and cause errors.
+=> Improvement: Use string type for blockchain to be consistent with data type and correct context, avoid unexpected errors.
+6. In the function sortedBalances(), use the undefined variable "lhsPriority" for the first if function.
+=> Improvement
+- Use the variable "balancePriority" instead of the variable "lhsPriority" and shorten the if function as follows:
+return balancePriority > -99 && balance.amount > 0;
+7. The function is missing the case where leftPriority and rightPriority are equal.
+=> Improvement: should add the equal case
+if (leftPriority > rightPriority) {
+return -1;
+} else if (rightPriority > leftPriority) {
+return 1;
+}
+return 0;
+8. In the variable rows, you should use "formattedBalances" instead of "sortedBalances" to map, and avoid incorrect data format.
+9. Missing class definition in "WalletRow".
+=> Improvement: Define classes variable
+const classes = {
+row: "wallet-row",
+};
+10. Create a separate variable to store the value of prices[balance.currency] to check if it exists or is undefined.
+=> Improvement
+- Create a price variable to check: if the value of prices[balance.currency] is undefined or does not exist, return 0.
+const price = prices[balance.currency] ?? 0;
+11. Missing WalletRow component
+=> Improvement
+- Write a WalletRow function with the necessary value properties to print the result
+For example:
+const WalletRow: React.FC<{
+amount: number;
+usdValue: number;
+formattedAmount: string;
+className?: string;
+}> = ({ usdValue, formattedAmount, className }) => {
+return (
+<div className={className}>
+<p>
+Amount: {formattedAmount} ({usdValue} USD)
+</p>
+</div>
+);
+};

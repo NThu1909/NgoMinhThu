@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 360px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #29500a;
+}
+.wrap-form-swap {
+}
+
+.swap-content {
+}
+.title-swap {
+  width: 100%;
+  text-align: center;
+  color: #9fe870;
+}
+
+.swap-input {
+  display: flex;
+  gap: 10%;
+}
+
+.swap-input-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.swap-button {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.select-money {
+  margin-top: 20px;
+}
