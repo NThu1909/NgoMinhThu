@@ -86,14 +86,14 @@ const fetchDataAxios = async () => {
 };
 fetchDataAxios();
 
-// Hàm để hiển thị dữ liệu trong HTML
+// Function to display data in HTML
 // function displayData() {
 //   const dataList = document.getElementById("data-list");
 
-//   // Xóa dữ liệu cũ trong danh sách (nếu có)
+//   //Delete old data in the list
 //   dataList.innerHTML = "";
 
-//   // Duyệt qua mảng và tạo các mục danh sách
+//   // Iterate through array and create list items
 //   dataSwap.forEach((item) => {
 //     const listItem = document.createElement("li");
 //     listItem.textContent = `Currency: ${item.currency}, Value: ${item.price}`;
